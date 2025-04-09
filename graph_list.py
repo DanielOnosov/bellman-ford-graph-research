@@ -14,6 +14,9 @@ class GraphList:
         for i in range(n):
             graph.append([])  # init all vertexes
             for j in range(n):
+                if i == j:
+                    continue
+
                 randomValue = random.uniform(0, 1)
 
                 if (i == 0 and j == 0) or randomValue <= p:
