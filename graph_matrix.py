@@ -15,7 +15,7 @@ class GraphM:
 
         return matrix
 
-    def generate(self, n, p, min_weight, max_weight):
+    def generate(self, n, p, min, max):
         matrix = []
 
         checkConnectivity(n, p)
@@ -26,16 +26,18 @@ class GraphM:
             matrix.append([])
             for j in range(n):
                 if i == j:
+                    matrix[i].append(0)
+                    continue
+
+                randomValue = random.uniform(0, 1)
+
+                if randomValue >= p:
                     matrix[i].append(self.no_edge)
-                elif i < j:
-                    if random.random() <= p:
-                        weight = random.randint(min_weight, max_weight)
-                        matrix[i].append(weight)
-                        numOfEdges += 1
-                    else:
-                        matrix[i].append(self.no_edge)
                 else:
-                    matrix[i].append(self.no_edge)
+                    weight = random.randint(min, max)
+
+                    numOfEdges += 1
+                    matrix[i].append(weight)
 
         print(f"Number of edges: {numOfEdges}")
 

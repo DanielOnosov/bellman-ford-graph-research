@@ -8,7 +8,7 @@ def main():
     graph1N = 200
     graph1D = 0.1
     graph1Min = -1
-    graph1Max = 20
+    graph1Max = 60
 
     graph = GraphM()
 
