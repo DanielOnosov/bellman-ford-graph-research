@@ -9,7 +9,7 @@ def bellman_ford_matrix(matrix, n, start):
     for u in range(n):
         for v in range(n):
             if matrix[u][v] != float('inf') and dist[u] != float('inf') and dist[u] + matrix[u][v] < dist[v]:
-                return "Negative cycle"
+                return 1
     return dist
 
 
@@ -19,14 +19,14 @@ def bellman_ford_list(graph, n, start):
     
     for i in range(n - 1):
         for u in range(len(graph)):
-            for v, weight in graph[u]:
+            for weight, v in graph[u]:
                 if v < n and dist[u] != float('inf') and dist[u] + weight < dist[v]:
                     dist[v] = dist[u] + weight
     
     for u in range(len(graph)):
-        for v, weight in graph[u]:
+        for weight, v in graph[u]:
             if v < n and dist[u] != float('inf') and dist[u] + weight < dist[v]:
-                return "Negative cycle"
+                return 1
     
     return dist
 

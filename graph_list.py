@@ -7,7 +7,7 @@ class GraphList:
     def generate(self, n, p, min, max):
         graph = []
 
-        checkConnectivity(n, p)
+        #checkConnectivity(n, p)
 
         numOfEdges = 0
 
@@ -25,7 +25,7 @@ class GraphList:
                     numOfEdges += 1
                     graph[i].append((weight, j))
 
-        print(f"Number of edges: {numOfEdges}")
+        #print(f"Number of edges: {numOfEdges}")
 
         return graph
 

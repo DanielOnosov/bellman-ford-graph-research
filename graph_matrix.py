@@ -18,7 +18,7 @@ class GraphM:
     def generate(self, n, p, min, max):
         matrix = []
 
-        checkConnectivity(n, p)
+        #checkConnectivity(n, p)
 
         numOfEdges = 0
 
@@ -39,7 +39,7 @@ class GraphM:
                     numOfEdges += 1
                     matrix[i].append(weight)
 
-        print(f"Number of edges: {numOfEdges}")
+        #print(f"Number of edges: {numOfEdges}")
 
         return matrix
 
